@@ -32,6 +32,7 @@ struct ContentView: View {
 }
 
 struct MainView: View{
+    @Environment(\.dismiss) var dismiss
     var body: some View{
         VStack{
             NavigationLink(destination: TestModeView()){
@@ -65,6 +66,21 @@ struct MainView: View{
                     .opacity(0.5)
             }
             .disabled(true)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar{
+            ToolbarItem(placement: .navigationBarLeading){
+                Button(action:{
+                    dismiss()
+                }){
+                    HStack{
+                        Image(systemName: "arrow.left")
+                            .foregroundColor(.blue)
+                        Text("タイトルに戻る")
+                            .foregroundColor(.blue)
+                    }
+                }
+            }
         }
     }
 }
