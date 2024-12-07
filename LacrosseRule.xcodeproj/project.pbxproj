@@ -14,6 +14,7 @@
 		698D2EF42D034B2A00543178 /* LacrosseRuleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2EF32D034B2A00543178 /* LacrosseRuleUITests.swift */; };
 		698D2EF62D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2EF52D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift */; };
 		698D2F052D03CCA900543178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2F042D03CCA900543178 /* ContentView.swift */; };
+		698D2F072D04EFDA00543178 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2F062D04EFDA00543178 /* TimerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		698D2EF32D034B2A00543178 /* LacrosseRuleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacrosseRuleUITests.swift; sourceTree = "<group>"; };
 		698D2EF52D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacrosseRuleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		698D2F042D03CCA900543178 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		698D2F062D04EFDA00543178 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				698D2ED82D034B2800543178 /* LacrosseRuleApp.swift */,
 				698D2EDC2D034B2A00543178 /* Assets.xcassets */,
 				698D2EDE2D034B2A00543178 /* Preview Content */,
+				698D2F062D04EFDA00543178 /* TimerModel.swift */,
 			);
 			path = LacrosseRule;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698D2F072D04EFDA00543178 /* TimerModel.swift in Sources */,
 				698D2F052D03CCA900543178 /* ContentView.swift in Sources */,
 				698D2ED92D034B2800543178 /* LacrosseRuleApp.swift in Sources */,
 			);

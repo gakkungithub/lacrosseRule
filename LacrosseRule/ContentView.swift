@@ -7,6 +7,44 @@
 
 import SwiftUI
 
+struct CustomBackButton: View{
+    @Environment(\.dismiss) var dismiss
+    var label: String
+    
+    var body: some View {
+        Button(action:{
+            dismiss()
+        }){
+            HStack{
+                Image(systemName: "arrow.left")
+                    .foregroundColor(.blue)
+                    .font(.title)
+                Text(label)
+                    .foregroundColor(.blue)
+            }
+        }
+    }
+}
+
+struct CustomNavigationLink: View{
+    var destination: AnyView
+    var title: String
+    var backgroundColor: Color
+    var foregroundColor: Color
+    
+    var body: some View{
+        NavigationLink(destination: destination){
+            Text(title)
+                .font(.title)
+                .frame(width: 250, height:100)
+                .padding()
+                .background(backgroundColor)
+                .foregroundColor(foregroundColor)
+                .cornerRadius(10)
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         NavigationView{
@@ -17,14 +55,8 @@ struct ContentView: View {
                     .padding()
                     .foregroundColor(.white)
                     .shadow(color: .red, radius: 5, x: 2, y: 2)
-                NavigationLink(destination: MainView()){
-                    Text("スタート")
-                        .font(.title)
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+                CustomNavigationLink(destination:AnyView(MainView()), title: "スタート", backgroundColor: Color.red,
+                                     foregroundColor: Color.white)
             }
             .padding()
         }
@@ -34,67 +66,85 @@ struct ContentView: View {
 struct MainView: View{
     @Environment(\.dismiss) var dismiss
     var body: some View{
-        VStack{
-            NavigationLink(destination: TestModeView()){
-                Text("テストモード")
-                    .font(.title)
-                    .frame(width: 250, height:100)
-                    .padding()
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
-            .padding()
-            NavigationLink(destination: StudyModeView()){
-                Text("復習モード")
-                    .font(.title)
-                    .frame(width: 250, height:100)
-                    .padding()
-                    .background(Color.yellow)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
-            .padding()
-            NavigationLink(destination: StudyModeView()){
-                Text("試合モード")
-                    .font(.title)
-                    .frame(width: 250, height:100)
-                    .padding()
-                    .background(Color.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .opacity(0.5)
-            }
+        VStack(spacing: 40){
+            CustomNavigationLink(destination:AnyView(TestModeSelectView()), title: "テストモード", backgroundColor: Color.red,
+                                 foregroundColor: Color.white)
+            CustomNavigationLink(destination:AnyView(MainView()), title: "復習モード", backgroundColor: Color.yellow,
+                                 foregroundColor: Color.white)
+            CustomNavigationLink(destination:AnyView(MainView()), title: "試合モード", backgroundColor: Color.gray,
+                                 foregroundColor: Color.white)
+            .opacity(0.5)
             .disabled(true)
         }
         .navigationBarBackButtonHidden(true)
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading){
-                Button(action:{
-                    dismiss()
-                }){
-                    HStack{
-                        Image(systemName: "arrow.left")
-                            .foregroundColor(.blue)
-                        Text("タイトルに戻る")
-                            .foregroundColor(.blue)
-                    }
+                CustomBackButton(
+                label: "タイトルに戻る"
+                )
+            }
+            ToolbarItem(placement:.navigationBarTrailing){
+                NavigationLink(destination:rankingView()){
+                    Image(systemName:"trophy.fill")
+                        .font(.title)
                 }
             }
         }
     }
 }
 
-struct TestModeView: View{
+struct TestModeSelectView: View{
+    @StateObject var timerController = TimerModel()
     var body: some View{
-        Text("モードを選んでください")
-            .font(.largeTitle)
+        VStack(spacing: 40){
+            Text("モードを選んでください")
+                .font(.largeTitle)
+            CustomNavigationLink(destination:AnyView(TestModeView().environmentObject(timerController)), title: "審判試験モード", backgroundColor: Color.red,
+                                 foregroundColor: Color.white)
+            CustomNavigationLink(destination:AnyView(TestModeView()), title: "新人戦モード", backgroundColor: Color.yellow,
+                                 foregroundColor: Color.white)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar{
+            ToolbarItem(placement: .navigationBarLeading){
+                CustomBackButton(
+                label: "モード選択画面に戻る"
+                )
+            }
+        }
+    }
+}
+
+struct TestModeView: View{
+    //タイマーモジュールを呼び出す
+    @EnvironmentObject var timerController: TimerModel
+    
+    var body: some View{
+        Text("テストモード")
+            .toolbar{
+                ToolbarItem(placement:.navigationBarTrailing){
+                    HStack(){
+                        Image(systemName: "stopwatch.fill")
+                        Text("\(timerController.timeString(time: timerController.count))")
+                    }
+                }
+            }
+            .onAppear{
+                timerController.start()
+            }
     }
 }
 
 struct StudyModeView: View{
     var body: some View{
         Text("出題範囲を選んでください")
+            .font(.largeTitle)
+    }
+}
+
+struct rankingView: View{
+    var body: some View{
+        Text("ランキング")
             .font(.largeTitle)
     }
 }
