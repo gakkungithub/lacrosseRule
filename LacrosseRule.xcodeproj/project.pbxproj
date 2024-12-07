@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		698D2ED92D034B2800543178 /* LacrosseRuleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2ED82D034B2800543178 /* LacrosseRuleApp.swift */; };
-		698D2EDB2D034B2800543178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2EDA2D034B2800543178 /* ContentView.swift */; };
 		698D2EDD2D034B2A00543178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698D2EDC2D034B2A00543178 /* Assets.xcassets */; };
 		698D2EE02D034B2A00543178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698D2EDF2D034B2A00543178 /* Preview Assets.xcassets */; };
 		698D2EEA2D034B2A00543178 /* LacrosseRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2EE92D034B2A00543178 /* LacrosseRuleTests.swift */; };
 		698D2EF42D034B2A00543178 /* LacrosseRuleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2EF32D034B2A00543178 /* LacrosseRuleUITests.swift */; };
 		698D2EF62D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2EF52D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift */; };
+		698D2F052D03CCA900543178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2F042D03CCA900543178 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		698D2ED52D034B2800543178 /* LacrosseRule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LacrosseRule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698D2ED82D034B2800543178 /* LacrosseRuleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacrosseRuleApp.swift; sourceTree = "<group>"; };
-		698D2EDA2D034B2800543178 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		698D2EDC2D034B2A00543178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		698D2EDF2D034B2A00543178 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		698D2EE52D034B2A00543178 /* LacrosseRuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LacrosseRuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		698D2EEF2D034B2A00543178 /* LacrosseRuleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LacrosseRuleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		698D2EF32D034B2A00543178 /* LacrosseRuleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacrosseRuleUITests.swift; sourceTree = "<group>"; };
 		698D2EF52D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacrosseRuleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		698D2F042D03CCA900543178 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,8 @@
 		698D2ED72D034B2800543178 /* LacrosseRule */ = {
 			isa = PBXGroup;
 			children = (
+				698D2F042D03CCA900543178 /* ContentView.swift */,
 				698D2ED82D034B2800543178 /* LacrosseRuleApp.swift */,
-				698D2EDA2D034B2800543178 /* ContentView.swift */,
 				698D2EDC2D034B2A00543178 /* Assets.xcassets */,
 				698D2EDE2D034B2A00543178 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698D2EDB2D034B2800543178 /* ContentView.swift in Sources */,
+				698D2F052D03CCA900543178 /* ContentView.swift in Sources */,
 				698D2ED92D034B2800543178 /* LacrosseRuleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
