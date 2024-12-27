@@ -117,6 +117,7 @@ struct TestModeSelectView: View{
 struct TestModeView: View{
     //タイマーモジュールを呼び出す
     @StateObject private var timerController = TimerModel()
+    @StateObject private var quizDBController = QuizDBManager()
     var score = 0
     
     var body: some View{
@@ -129,6 +130,11 @@ struct TestModeView: View{
                     }
                 }
             }
+        Text("\(quizDBController.openDB())")
+//        ForEach(quizDBController.select(), id: \.self){
+//            quiz in Text("\(quiz)")
+//        }
+        //Text("\(quizDBController.select())")
             .onAppear{
                 timerController.start()
             }
@@ -142,6 +148,7 @@ struct ResultView: View{
     var result: Int
     var body: some View{
         Text("今回のスコアは: \(result) です!!")
+            .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -1,3 +1,10 @@
+//
+//  QuizDBManager.swift
+//  LacrosseRule
+//
+//  Created by Gaku Takahashi on 2024/12/27.
+//
+
 import Foundation
 import SQLite3
 
@@ -8,17 +15,26 @@ struct Question {
 }
 
 class QuizDBManager: ObservableObject{
-    var db: OpaquePointer? = nil
-    let dbfile: String = "quiz.db"
+    var db: OpaquePointer?
+    private let dbFileName = "quiz.db"
     
     func openDB() -> String {
-        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(dbfile)
-        if sqlite3_open(fileURL.path, &db) == SQLITE_OK {
-            return fileURL.path
+        // プロジェクトに組み込んでおいた db ファイルを読みこみ
+        guard let bundleURL = Bundle.main.url(forResource: "quiz", withExtension: "db"),
+              let bundleData = try? Data(contentsOf: bundleURL),
+              let documentDirectoryURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
+            return ""
         }
-        else{
-            return fileURL.path
+
+        // シミュレーター or 実機環境の `documentDirectory` へのパスを取得
+        let fileURL = documentDirectoryURL.appendingPathComponent(dbFileName)
+        // プロジェクトに組み込んだ db ファイルを `documentDirectory` 配下に配置
+        try? bundleData.write(to: fileURL)
+
+        guard sqlite3_open(fileURL.path, &db) == SQLITE_OK else {
+            return ""
         }
+        return fileURL.path
     }
     
     func select() -> [Question]{

@@ -15,7 +15,7 @@
 		698D2EF62D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2EF52D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift */; };
 		698D2F052D03CCA900543178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2F042D03CCA900543178 /* ContentView.swift */; };
 		698D2F072D04EFDA00543178 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D2F062D04EFDA00543178 /* TimerModel.swift */; };
-		69AC16E42D1D717F00B29458 /* getQuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AC16E32D1D717F00B29458 /* getQuizData.swift */; };
+		69AE39F92D1DDC6100F629F9 /* QuizDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AE39F82D1DDC6100F629F9 /* QuizDBManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,8 @@
 		698D2EF52D034B2A00543178 /* LacrosseRuleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacrosseRuleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		698D2F042D03CCA900543178 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		698D2F062D04EFDA00543178 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
-		69AC16E32D1D717F00B29458 /* getQuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getQuizData.swift; sourceTree = "<group>"; };
+		69AE39F82D1DDC6100F629F9 /* QuizDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDBManager.swift; sourceTree = "<group>"; };
+		69AE39FA2D1DE0A400F629F9 /* quiz.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = quiz.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 		698D2ECC2D034B2800543178 = {
 			isa = PBXGroup;
 			children = (
+				69AE39FA2D1DE0A400F629F9 /* quiz.db */,
 				698D2ED72D034B2800543178 /* LacrosseRule */,
 				698D2EE82D034B2A00543178 /* LacrosseRuleTests */,
 				698D2EF22D034B2A00543178 /* LacrosseRuleUITests */,
@@ -103,7 +105,7 @@
 				698D2EDC2D034B2A00543178 /* Assets.xcassets */,
 				698D2EDE2D034B2A00543178 /* Preview Content */,
 				698D2F062D04EFDA00543178 /* TimerModel.swift */,
-				69AC16E32D1D717F00B29458 /* getQuizData.swift */,
+				69AE39F82D1DDC6100F629F9 /* QuizDBManager.swift */,
 			);
 			path = LacrosseRule;
 			sourceTree = "<group>";
@@ -266,7 +268,7 @@
 				698D2F072D04EFDA00543178 /* TimerModel.swift in Sources */,
 				698D2F052D03CCA900543178 /* ContentView.swift in Sources */,
 				698D2ED92D034B2800543178 /* LacrosseRuleApp.swift in Sources */,
-				69AC16E42D1D717F00B29458 /* getQuizData.swift in Sources */,
+				69AE39F92D1DDC6100F629F9 /* QuizDBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

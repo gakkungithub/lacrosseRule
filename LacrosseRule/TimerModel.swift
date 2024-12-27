@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class TimerModel: ObservableObject{
-    @Published var count: Int = 5
+    @Published var count: Int = 2400
     @Published var timer: AnyCancellable!
     @Published var isEnd: Bool = false
     
